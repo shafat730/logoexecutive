@@ -1,4 +1,7 @@
 name: ui deploy
+env:
+  VERCEL_ORG_ID: team_A3u6vtSHVod3tReEdRAZIEnQ
+  VERCEL_PROJECT_ID: prj_yy3SOTwFwAGQbQaEk7lktVylgh7A
 on:
   pull_request:
     branches:
