@@ -47,9 +47,6 @@ function Dashboard() {
 
       <div className={styles.dashboardContentContainer}>
         <section className={styles.dashboardContentSection}>
-          <CardWrapper title="User Info">
-            <UserInfo />
-          </CardWrapper>
           <CardWrapper title="Change Password">
             <ChangePassword />
           </CardWrapper>
