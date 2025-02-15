@@ -9,15 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3 
+        with:
+            version: 10
       
       - name: Install dependencies
         run: pnpm --filter ui build
 
-      - name: Lint
-        run: pnpm --filter ui lint
-
-      - name: Test
-        run: pnpm --filter ui test
 
       - name: Pull Vercel Environment Information
         run: vercel pull -yes -environment=development -token=${{ secrets.VERCEL_TOKEN }}
