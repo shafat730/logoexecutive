@@ -19,9 +19,12 @@ jobs:
       
       - name: Install dependencies
         run: pnpm install
+
+      - name: Install dependencies
+        run: cd packages/ui
         
       - name:  Build
-        run: pnpm --filter ui build
+        run: pnpm build
         
       - name: Install Vercel CLI
         run: pnpm add -g vercel@latest
