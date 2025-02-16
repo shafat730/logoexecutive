@@ -1,4 +1,4 @@
-name: Deploy Nodejs frontend app
+name: Deploy nodejs backend app
 on:
   workflow_dispatch:
   push:
