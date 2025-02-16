@@ -2,9 +2,11 @@ name: Deploy react frontend app
 on:
   workflow_dispatch:
   push:
-    branches:
+   paths:
+      - 'packages/ui'
+   branches:
       - dev
-
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
