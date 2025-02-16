@@ -5,7 +5,7 @@ on:
    branches:
       - dev
    paths:
-      - 'packages/ui' 
+      - 'packages/ui/**' 
 jobs:
   build:
     runs-on: ubuntu-latest
