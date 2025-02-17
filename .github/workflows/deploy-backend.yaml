@@ -24,9 +24,7 @@ jobs:
         with:
             version: 10  
       - name: Install dependencies
-        run: pnpm install
-      - name: Serve Backend
-        run: pnpm --filter app serve  
+        run: pnpm install 
       - name: Install Vercel CLI
         run: pnpm add -g vercel@latest
       - name: Pull vercel environment information
