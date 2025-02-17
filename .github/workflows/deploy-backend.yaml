@@ -10,8 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-        VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-        VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        VERCEL_ORG_ID: team_A3u6vtSHVod3tReEdRAZIEnQ
+        VERCEL_PROJECT_ID: prj_EOQkZruhy0d3IbVUid3xg7gyfD3L
     steps:
       - name: checkout repository
         uses: actions/checkout@v2
