@@ -3,12 +3,14 @@ on:
   workflow_dispatch:
   push:
    branches:
-      - dev
+      - stage
+      - prod
    paths:
       - 'packages/app/**' 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     env:
         VERCEL_ORG_ID: team_A3u6vtSHVod3tReEdRAZIEnQ
         VERCEL_PROJECT_ID: prj_EOQkZruhy0d3IbVUid3xg7gyfD3L
