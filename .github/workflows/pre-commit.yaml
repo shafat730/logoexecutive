@@ -1,16 +1,23 @@
-name: Check linting/formatin and test cases
+name: Check linting, format, test and linked issue
 
 on:
   workflow_dispatch:
-  pull_request: 
-    branches: 
-      - dev
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - stage
+      - prod
+    paths:
+      - 'packages/**'
 
 jobs:
-  test:
+  standards:
     name: Check linting/formatin and test cases
     runs-on: ubuntu-20.04
     timeout-minutes: 5
+    permissions:
+      issues: read
+      pull-requests: write
     steps:
       - name: Checkout repository content
         uses: actions/checkout@v4
@@ -29,7 +36,7 @@ jobs:
         run: pnpm install
 
       - name: linting
-        run: pnpm  lint
+        run: pnpm lint
 
       - name: prettier check
         run: pnpm check
@@ -39,3 +46,8 @@ jobs:
       
       - name: backend coverage report
         run: pnpm --filter app coverage
+
+      - name: Check linked issues
+        uses: nearform-actions/github-action-check-linked-issues@v1
+        with:
+          exclude-branches: "release/**, dependabot/**"
