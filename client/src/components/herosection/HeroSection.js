@@ -6,7 +6,7 @@ function HeroSection() {
 		<div className='hero-container'>
 			<div className='hero-box'>
 				<h1 className='hero-tagline'>
-					Empower Your Branding: Logo Executive Where Logos Shine in Every Size
+					Empower Your Branding: Logo Executive Where Logos Shine in
 				</h1>
 				<p className='hero-description' data-testid='hero-description'>
 					Logo Executive is your partner in logo exploration. Our platform
