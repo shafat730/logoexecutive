@@ -4,6 +4,7 @@ on:
   push:
    branches:
       - dev
+      - stage
    paths:
       - 'packages/ui/**' 
 jobs:
