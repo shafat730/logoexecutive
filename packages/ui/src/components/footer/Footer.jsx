@@ -28,7 +28,7 @@ function Footer() {
             rel="noopener noreferrer"
             className={styles["footer-powered"]}
           >
-          Powered by TeamSh
+          Powered by TeamShiksha
           </a>
         </div>
       </footer>
