@@ -28,7 +28,7 @@ function Footer() {
             rel="noopener noreferrer"
             className={styles["footer-powered"]}
           >
-          Powered by Tea
+          Powered by Shafat
           </a>
         </div>
       </footer>
