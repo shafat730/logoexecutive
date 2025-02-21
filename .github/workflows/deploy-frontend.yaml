@@ -4,13 +4,14 @@ on:
   push:
    branches:
       - stage
-      - prod
+      - dev
    paths:
       - 'packages/ui/**' 
 jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    environment: ${{ github.ref_name == 'stage' && 'DEV' || 'STAGE' }}
     env:
         VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
         VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -26,7 +27,7 @@ jobs:
       - name: Install Vercel CLI
         run: pnpm add -g vercel@latest
       - name: Pull vercel environment information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --environment=${{ github.ref_name == 'stage' && 'DEV' || 'STAGE' }} --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
