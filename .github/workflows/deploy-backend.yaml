@@ -4,14 +4,16 @@ on:
   push:
    branches:
       - dev
+      - stage
    paths:
       - 'packages/app/**' 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: ${{ github.ref_name == 'stage' && 'STAGE' || 'DEV' }}
     env:
-        VERCEL_ORG_ID: team_A3u6vtSHVod3tReEdRAZIEnQ
-        VERCEL_PROJECT_ID: prj_EOQkZruhy0d3IbVUid3xg7gyfD3L
+        VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+        VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_2 }}
     steps:
       - name: checkout repository
         uses: actions/checkout@v2
