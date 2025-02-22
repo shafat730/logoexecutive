@@ -31,7 +31,7 @@ jobs:
       - name: Install Vercel CLI
         run: pnpm add -g vercel@latest
       - name: Pull vercel environment information
-        run: vercel pull --yes --environment=${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
