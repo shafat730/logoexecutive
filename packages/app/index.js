@@ -33,7 +33,7 @@ const app = express();
 app.use(cookieParser());
 app.disable("x-powered-by");
 app.use(express.json());
-app.get("/", (req, res) => res.send("Welcome to the "));
+app.get("/", (req, res) => res.send("Welcome to th e "));
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/api/", routes);
 
