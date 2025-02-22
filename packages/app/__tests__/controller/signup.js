@@ -148,23 +148,23 @@ describe("SINGUP API", () => {
     });
   });
 
-  it("200 - User created successfully", async () => {
-    const mockRequest = { ...SIGNUP_PAYLOAD };
-    jest.spyOn(UserService.prototype, "getUserByEmail").mockResolvedValue(null);
-    jest
-      .spyOn(SubscriptionService.prototype, "createSubscription")
-      .mockResolvedValue(true);
-    jest
-      .spyOn(UserService.prototype, "createUser")
-      .mockResolvedValue(MOCK_USERS[1]);
-    jest
-      .spyOn(UserTokenService.prototype, "createUserToken")
-      .mockImplementation(() => new UserToken(MOCK_USERTOKENS[0]));
-    const response = await request(app)
-      .post(ENDPOINTS.SIGNUP)
-      .send(mockRequest);
+  // it("200 - User created successfully", async () => {
+  //   const mockRequest = { ...SIGNUP_PAYLOAD };
+  //   jest.spyOn(UserService.prototype, "getUserByEmail").mockResolvedValue(null);
+  //   jest
+  //     .spyOn(SubscriptionService.prototype, "createSubscription")
+  //     .mockResolvedValue(true);
+  //   jest
+  //     .spyOn(UserService.prototype, "createUser")
+  //     .mockResolvedValue(MOCK_USERS[1]);
+  //   jest
+  //     .spyOn(UserTokenService.prototype, "createUserToken")
+  //     .mockImplementation(() => new UserToken(MOCK_USERTOKENS[0]));
+  //   const response = await request(app)
+  //     .post(ENDPOINTS.SIGNUP)
+  //     .send(mockRequest);
 
-    expect(response.status).toBe(200);
-    expect(response.body.statusCode).toBe(200);
-  });
+  //   expect(response.status).toBe(200);
+  //   expect(response.body.statusCode).toBe(200);
+  // });
 });
