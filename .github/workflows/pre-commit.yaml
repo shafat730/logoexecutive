@@ -43,13 +43,13 @@ jobs:
             app:
               - 'packages/app/**'
 
-      # - name: linting
-      #   if: steps.filter.outputs.ui == 'true' || steps.filter.outputs.app == 'true'
-      #   run: pnpm lint
+      - name: linting
+        if: steps.filter.outputs.ui == 'true' || steps.filter.outputs.app == 'true'
+        run: pnpm lint
 
-      # - name: prettier check
-      #   if: steps.filter.outputs.ui == 'true' || steps.filter.outputs.app == 'true'
-      #   run: pnpm check
+      - name: prettier check
+        if: steps.filter.outputs.ui == 'true' || steps.filter.outputs.app == 'true'
+        run: pnpm check
 
       - name: frontend coverage report and build check
         if: steps.filter.outputs.ui == 'true'
