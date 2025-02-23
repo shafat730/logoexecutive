@@ -114,9 +114,11 @@ jobs:
                 org: owner,
                 username: assignee
               });
+            if(issue.assignees.length === 0){
             await github.rest.issues.addAssignees({
               owner,
               repo,
               issue_number,
               assignees: [assignee]
             });
+            }
